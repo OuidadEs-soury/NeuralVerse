@@ -1,12 +1,14 @@
-const express = require("express")
-const cors = require("cors")
+require("dotenv").config()
 
-const connectDB = require("./database")
+const express=require("express")
+const cors=require("cors")
 
-const authRoutes = require("./routes/auth")
-const worldRoutes = require("./routes/worlds")
+const connectDB=require("./database")
 
-const app = express()
+const worldRoutes=require("./routes/worlds")
+const aiRoutes=require("./routes/ai")
+
+const app=express()
 
 connectDB()
 
@@ -15,11 +17,11 @@ app.use(express.json())
 
 app.use(express.static("public"))
 
-app.use("/api/auth", authRoutes)
-app.use("/api/worlds", worldRoutes)
+app.use("/api/worlds",worldRoutes)
+app.use("/api/ai",aiRoutes)
 
-app.listen(3000, () => {
+app.listen(3000,()=>{
 
-    console.log("🚀 NeuralVerse running on http://localhost:3000")
+console.log("🚀 NeuralVerse Ultra running")
 
 })
