@@ -2,15 +2,17 @@ const mongoose = require("mongoose")
 
 const WorldSchema = new mongoose.Schema({
 
-    title: String,
+name:String,
 
-    description: String,
+description:String,
 
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
+planetType:String,
+
+created:{
+type:Date,
+default:Date.now
+}
 
 })
 
-module.exports = mongoose.model("World", WorldSchema)
+module.exports = mongoose.model("World",WorldSchema)
