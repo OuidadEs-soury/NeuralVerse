@@ -1,59 +1,50 @@
-body {
+body{
 
 margin:0;
-overflow:hidden;
 background:black;
+overflow:hidden;
 font-family:Arial;
 
 }
 
-.hero {
+.ui{
 
 position:absolute;
-top:40%;
-left:50%;
-transform:translate(-50%,-50%);
-text-align:center;
-color:white;
+top:20px;
+left:20px;
 z-index:10;
+color:white;
+
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+
+padding:20px;
+border-radius:10px;
 
 }
 
-h1 {
+h1{
 
-font-size:80px;
+font-size:40px;
 
-background: linear-gradient(90deg,#00f7ff,#ff00f7);
+background:linear-gradient(90deg,cyan,magenta);
 
 -webkit-background-clip:text;
+
 color:transparent;
 
-animation: glow 3s infinite alternate;
-
 }
 
-button {
+button{
 
-padding:15px 40px;
+padding:10px 20px;
+
+background:cyan;
+
 border:none;
-background:#00f7ff;
-color:black;
-font-size:20px;
+
+border-radius:6px;
+
 cursor:pointer;
-border-radius:40px;
-
-}
-
-button:hover {
-
-transform:scale(1.1);
-
-}
-
-@keyframes glow {
-
-from { filter: drop-shadow(0 0 10px cyan) }
-
-to { filter: drop-shadow(0 0 30px magenta) }
 
 }

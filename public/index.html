@@ -3,7 +3,7 @@
 
 <head>
 
-<title>NeuralVerse</title>
+<title>NeuralVerse Ultra</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,20 +13,24 @@
 
 <body>
 
-<div class="hero">
+<div class="ui">
 
 <h1>NeuralVerse</h1>
 
-<p>Create AI Worlds</p>
+<input id="prompt" placeholder="Describe a planet">
 
-<button onclick="enter()">Enter Universe</button>
+<button onclick="generate()">Generate AI Planet</button>
+
+<div id="result"></div>
 
 </div>
 
-<canvas id="universe"></canvas>
+<canvas id="space"></canvas>
 
-<script src="universe.js"></script>
-<script src="app.js"></script>
+<script src="galaxy.js"></script>
+<script src="planets.js"></script>
+<script src="ui.js"></script>
+<script src="ai.js"></script>
 
 </body>
 
