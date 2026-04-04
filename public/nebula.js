@@ -1,26 +1,17 @@
-for(let i=0;i<100;i++){
+function createNebula(){
 
-const geo=new THREE.SphereGeometry(10,32,32)
+const nebulaGeo = new THREE.SphereGeometry(400,32,32)
 
-const mat=new THREE.MeshBasicMaterial({
+const nebulaMat = new THREE.MeshBasicMaterial({
 
-color:0x4400ff,
-
+color:0x5522ff,
 transparent:true,
-
-opacity:0.05
+opacity:0.15,
+side:THREE.BackSide
 
 })
 
-const nebula=new THREE.Mesh(geo,mat)
-
-nebula.position.set(
-
-(Math.random()-0.5)*500,
-(Math.random()-0.5)*500,
-(Math.random()-0.5)*500
-
-)
+const nebula = new THREE.Mesh(nebulaGeo,nebulaMat)
 
 scene.add(nebula)
 
