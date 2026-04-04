@@ -1,24 +1,29 @@
-const keys={}
+const keys = {}
 
-document.addEventListener("keydown",e=>{
+const speed = 1
 
-keys[e.key]=true
-
+document.addEventListener("keydown", e => {
+keys[e.key.toLowerCase()] = true
 })
 
-document.addEventListener("keyup",e=>{
-
-keys[e.key]=false
-
+document.addEventListener("keyup", e => {
+keys[e.key.toLowerCase()] = false
 })
 
 function updateControls(){
 
-if(keys["w"]) ship.position.z-=0.5
-if(keys["s"]) ship.position.z+=0.5
-if(keys["a"]) ship.position.x-=0.5
-if(keys["d"]) ship.position.x+=0.5
+if(keys["w"]) ship.position.z -= speed
 
-camera.position.copy(ship.position)
+if(keys["s"]) ship.position.z += speed
+
+if(keys["a"]) ship.position.x -= speed
+
+if(keys["d"]) ship.position.x += speed
+
+camera.position.x = ship.position.x
+camera.position.z = ship.position.z + 10
+camera.position.y = ship.position.y + 5
+
+camera.lookAt(ship.position)
 
 }
