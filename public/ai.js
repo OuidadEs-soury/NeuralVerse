@@ -1,8 +1,8 @@
-async function generate(){
+async function generatePlanet(){
 
-const prompt=document.getElementById("prompt").value
+const name=document.getElementById("planetName").value
 
-const res=await fetch("/api/ai/generate",{
+const res=await fetch("/api/planet",{
 
 method:"POST",
 
@@ -10,13 +10,13 @@ headers:{
 "Content-Type":"application/json"
 },
 
-body:JSON.stringify({prompt})
+body:JSON.stringify({name})
 
 })
 
 const data=await res.json()
 
-document.getElementById("result").innerText=data.description
+document.getElementById("lore").innerText=data.description
 
 createPlanet()
 
