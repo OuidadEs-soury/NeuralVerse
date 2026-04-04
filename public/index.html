@@ -3,7 +3,7 @@
 
 <head>
 
-<title>NeuralVerse Ultra</title>
+<title>Galaxy God Mode</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,23 +13,29 @@
 
 <body>
 
-<div class="ui">
+<div class="hud">
 
-<h1>NeuralVerse</h1>
+<h1>Galaxy God Mode</h1>
 
-<input id="prompt" placeholder="Describe a planet">
+<p>WASD to fly spaceship</p>
 
-<button onclick="generate()">Generate AI Planet</button>
+<input id="planetName" placeholder="Planet name">
 
-<div id="result"></div>
+<button onclick="generatePlanet()">Generate Planet</button>
+
+<div id="lore"></div>
 
 </div>
 
 <canvas id="space"></canvas>
 
+<script src="engine.js"></script>
 <script src="galaxy.js"></script>
+<script src="nebula.js"></script>
 <script src="planets.js"></script>
-<script src="ui.js"></script>
+<script src="blackhole.js"></script>
+<script src="spaceship.js"></script>
+<script src="controls.js"></script>
 <script src="ai.js"></script>
 
 </body>
