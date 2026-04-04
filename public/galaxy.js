@@ -1,25 +1,37 @@
-const starGeometry = new THREE.BufferGeometry()
+const starsGeometry = new THREE.BufferGeometry()
 
-const starCount = 20000
+const starCount = 30000
 
-const starPositions = new Float32Array(starCount * 3)
+const starPositions = new Float32Array(starCount*3)
 
-for(let i = 0; i < starCount * 3; i++){
+for(let i=0;i<starCount;i++){
 
-starPositions[i] = (Math.random() - 0.5) * 2000
+const i3=i*3
+
+const radius = Math.random()*1000
+
+const angle = radius*0.3
+
+starPositions[i3] = Math.cos(angle)*radius
+starPositions[i3+1] = (Math.random()-0.5)*200
+starPositions[i3+2] = Math.sin(angle)*radius
 
 }
 
-starGeometry.setAttribute(
+starsGeometry.setAttribute(
+
 "position",
 new THREE.BufferAttribute(starPositions,3)
+
 )
 
-const starMaterial = new THREE.PointsMaterial({
+const starsMaterial = new THREE.PointsMaterial({
+
 color:0xffffff,
-size:0.7
+size:0.8
+
 })
 
-const stars = new THREE.Points(starGeometry, starMaterial)
+const galaxy = new THREE.Points(starsGeometry,starsMaterial)
 
-scene.add(stars)
+scene.add(galaxy)
