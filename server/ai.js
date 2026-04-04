@@ -1,17 +1,26 @@
-const express = require("express")
+const OpenAI=require("openai")
 
-const generateWorld = require("../ai")
+const client=new OpenAI({
 
-const router = express.Router()
-
-router.post("/generate",async(req,res)=>{
-
-const {prompt}=req.body
-
-const text=await generateWorld(prompt)
-
-res.json({description:text})
+apiKey:process.env.OPENAI_KEY
 
 })
 
-module.exports = router
+async function generateLore(name){
+
+const completion=await client.chat.completions.create({
+
+model:"gpt-4o-mini",
+
+messages:[
+{role:"system",content:"You create lore for alien planets."},
+{role:"user",content:"Create lore for planet "+name}
+]
+
+})
+
+return completion.choices[0].message.content
+
+}
+
+module.exports=generateLore
