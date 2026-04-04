@@ -1,37 +1,37 @@
 const keys={}
-
 let speed=1
 
 document.addEventListener("keydown",e=>{
 
-keys[e.key.toLowerCase()] = true
+keys[e.key.toLowerCase()]=true
 
 })
 
 document.addEventListener("keyup",e=>{
 
-keys[e.key.toLowerCase()] = false
+keys[e.key.toLowerCase()]=false
 
 })
 
 function updateControls(){
 
-if(keys["shift"]) speed=3
+if(keys["shift"]) speed=4
 else speed=1
 
-if(keys["w"]) ship.position.z -= speed
-if(keys["s"]) ship.position.z += speed
-if(keys["a"]) ship.position.x -= speed
-if(keys["d"]) ship.position.x += speed
+if(keys["w"]) ship.position.z-=speed
+if(keys["s"]) ship.position.z+=speed
+if(keys["a"]) ship.position.x-=speed
+if(keys["d"]) ship.position.x+=speed
 
-camera.position.x = ship.position.x
-camera.position.z = ship.position.z+10
-camera.position.y = ship.position.y+5
+camera.position.x=ship.position.x
+camera.position.z=ship.position.z+10
+camera.position.y=ship.position.y+5
 
 camera.lookAt(ship.position)
 
-blackHoleGravity()
+document.getElementById("speed").innerText="Speed: "+speed
 
-checkPlanetLanding()
+checkWormhole()
+blackHoleGravity()
 
 }
