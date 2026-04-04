@@ -1,16 +1,16 @@
 {
-"name": "neuralverse-ultra",
-"version": "2.0.0",
-"description": "AI Galaxy Simulator",
-"main": "server/server.js",
-"scripts": {
-"start": "node server/server.js"
+"name":"galaxy god mode",
+"version":"3.0.0",
+"description":"Procedural galaxy simulation",
+"main":"server/server.js",
+"scripts":{
+"start":"node server/server.js"
 },
-"dependencies": {
-"express": "^4.19.0",
-"mongoose": "^8.0.0",
-"cors": "^2.8.5",
-"dotenv": "^16.4.0",
-"openai": "^4.0.0"
+"dependencies":{
+"express":"^4.19.0",
+"mongoose":"^8.0.0",
+"cors":"^2.8.5",
+"dotenv":"^16.4.0",
+"openai":"^4.0.0"
 }
 }
