@@ -1,61 +1,30 @@
-const scene=new THREE.Scene()
+const starsGeo=new THREE.BufferGeometry()
 
-const camera=new THREE.PerspectiveCamera(
+const starCount=20000
 
-75,
-window.innerWidth/window.innerHeight,
-0.1,
-1000
+const starPos=new Float32Array(starCount*3)
 
-)
+for(let i=0;i<starCount*3;i++){
 
-const renderer=new THREE.WebGLRenderer({
-
-canvas:document.getElementById("space")
-
-})
-
-renderer.setSize(window.innerWidth,window.innerHeight)
-
-camera.position.z=5
-
-const geometry=new THREE.BufferGeometry()
-
-const count=10000
-
-const positions=new Float32Array(count*3)
-
-for(let i=0;i<count*3;i++){
-
-positions[i]=(Math.random()-0.5)*800
+starPos[i]=(Math.random()-0.5)*2000
 
 }
 
-geometry.setAttribute("position",
+starsGeo.setAttribute(
 
-new THREE.BufferAttribute(positions,3)
+"position",
+
+new THREE.BufferAttribute(starPos,3)
 
 )
 
-const material=new THREE.PointsMaterial({
+const starsMat=new THREE.PointsMaterial({
 
-size:0.7,
-color:0xffffff
+color:0xffffff,
+size:0.7
 
 })
 
-const stars=new THREE.Points(geometry,material)
+const stars=new THREE.Points(starsGeo,starsMat)
 
 scene.add(stars)
-
-function animate(){
-
-requestAnimationFrame(animate)
-
-stars.rotation.y+=0.0003
-
-renderer.render(scene,camera)
-
-}
-
-animate()
