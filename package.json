@@ -1,1 +1,1 @@
-{"name":"galaxy god mode","version":"3.0.0","description":"Procedural galaxy simulation","main":"server/server.js","scripts":{"start":"node server/server.js"},"dependencies":{"cors":"^2.8.5","dotenv":"^16.6.1","express":"^4.19.0","mongoose":"^8.0.0","openai":"^4.0.0"}}
+{"name":"galaxy-god-mode","version":"3.0.0","description":"Procedural galaxy simulation","main":"server/server.js","scripts":{"start":"node server/server.js"},"dependencies":{"cors":"^2.8.6","dotenv":"^16.6.1","express":"^4.22.1","mongoose":"^8.0.0","openai":"^4.0.0"},"keywords":[],"author":"","license":"ISC"}
