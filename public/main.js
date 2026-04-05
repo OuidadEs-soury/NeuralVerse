@@ -1,13 +1,18 @@
 function animate(){
 
 requestAnimationFrame(animate)
-createTerrainPlanet()
 
 updateControls()
 
 updatePlanets()
 
+updateEnemies()
+
+updateLasers()
+
 updateRadar()
+
+checkDock()
 
 renderer.render(scene,camera)
 
