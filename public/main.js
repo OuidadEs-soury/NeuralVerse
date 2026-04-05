@@ -1,6 +1,7 @@
 function animate(){
 
 requestAnimationFrame(animate)
+createTerrainPlanet()
 
 updateControls()
 
